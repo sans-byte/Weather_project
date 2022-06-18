@@ -1,0 +1,78 @@
+body {
+  background-image: url(7T9364v.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 20px 40px;
+}
+
+.logo-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.heading {
+  color: #fff;
+  font-size: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  width: fit-content;
+  margin: auto;
+  padding: 15px 20px;
+  background-color: rgb(0, 175, 175);
+  border: none;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  margin-right: 450px;
+}
+
+.menu-info{
+    display: flex;
+    flex-direction: row;
+}
+
+.info {
+    color: white;
+    width: 500px;
+}
+
+h2{
+    text-decoration: underline;
+}
+p{
+    text-align: justify;
+    font-size: large;
+
+}
+
+.saber{
+    display: none;
+}
+.modis{
+    display: none;
+}
+.toms{
+    display: none;
+}
+.calipso{
+    display: none;
+}
+
+.unhide {
+    display: block;
+}

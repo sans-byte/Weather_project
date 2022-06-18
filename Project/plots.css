@@ -1,0 +1,34 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-image: url(./7T9364v.gif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+.currentSurfaceWind ,.graph  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.plot{
+    width: 1000px;
+}
+p{
+    width: 1000px;
+    height: 500px;
+}
+
+h2 {
+    margin: 20px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}

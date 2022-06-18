@@ -1,0 +1,102 @@
+*{margin: 0;
+padding:0;
+box-sizing: border-box;
+}
+
+.video{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+nav{
+    width: 100%;
+    margin-top: 1.5rem;
+    position: absolute;
+ 
+    padding:0 60px ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo1{
+    width: 100px;
+}
+
+.logo1>img{
+    width: 100%;
+}
+
+.logo2{
+    width: 100px;
+}
+
+.logo2>img{
+    width: 100%;
+}
+
+.text{
+    position: absolute;
+    text-align: left;
+    color: whitesmoke;
+    font-family: 'Bebas Neue';
+ top: 55%;
+ left: 45%;
+ font-size: 2.5rem;
+line-height: 4rem;
+letter-spacing: 3px;
+}
+
+.sect{
+    background:url(./b1.png);
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.txtpara{
+    display: flex;
+    align-items: center;
+}
+.fa{
+     padding-right: 10px;
+}
+
+.bodycont{
+    display: flex;
+}
+
+.animation{
+    background: url(./9d73af36e486def0f4c81aa372b8655c.gif);
+}
+
+.button{
+    width: fit-content;
+    margin: auto;
+    padding: 10px 15px;
+    background-color: aqua;
+
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.button:hover{
+    color: rgb(4, 6, 20);
+    box-shadow: 10px 0px 30px 0px #0ff;
+}
+
+.textgal{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+
+/**/
+
+
+

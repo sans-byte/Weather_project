@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Satellite-based</title>
+    <link
+      rel="stylesheet"
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="plots.css" />
+    <style>
+      .getbutton:hover {
+        background-color: #0ff;
+        color: rgb(4, 6, 20);
+        box-shadow: 10px 0px 30px 0px #0ff;
+      }
+      .row {
+        display: flex;
+        justify-content: center;
+      }
+
+      .booking-form {
+        position: relative;
+
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+        overflow: hidden;
+      }
+
+      .booking-form::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+
+        z-index: -1;
+      }
+
+      .booking-form .form-header {
+        text-align: center;
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .booking-form .form-header h1 {
+        font-weight: 700;
+        text-transform: capitalize;
+        font-size: 42px;
+        margin: 0px;
+        color: #fff;
+      }
+
+      .booking-form .form-group {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .booking-form .form-control {
+        background-color: #0ff;
+        height: 60px;
+        padding: 0px 25px;
+        border: none;
+        border-radius: 0px;
+        color: #fff;
+        -webkit-box-shadow: 0px 0px 0px 2px transparent;
+        box-shadow: 0px 0px 0px 2px transparent;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+      }
+
+      .booking-form .form-control::-webkit-input-placeholder {
+        color: rgb(255, 255, 255);
+      }
+
+      .booking-form .form-control:-ms-input-placeholder {
+        color: rgb(255, 255, 255);
+      }
+
+      .booking-form .form-control::placeholder {
+        color: rgb(255, 255, 255);
+      }
+
+      .booking-form .form-control:focus {
+        -webkit-box-shadow: 0px 0px 0px 2px rgba(0, 255, 255, 0.815);
+        box-shadow: 0px 0px 0px 2px rgba(0, 255, 255, 0.815);
+      }
+
+      .booking-form input[type="date"].form-control {
+        padding-top: 16px;
+      }
+
+      .booking-form input[type="date"].form-control:invalid {
+        color: rgb(1, 21, 26);
+      }
+
+      .booking-form input[type="date"].form-control + .form-label {
+        opacity: 1;
+        top: 10px;
+      }
+
+      .booking-form select.form-control {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      .booking-form select.form-control:invalid {
+        color: rgb(1, 21, 26);
+      }
+
+      .booking-form select.form-control + .select-arrow {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 32px;
+        line-height: 32px;
+        height: 32px;
+        text-align: center;
+        pointer-events: none;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+      }
+
+      .booking-form select.form-control + .select-arrow:after {
+        content: "\279C";
+        display: block;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      .booking-form select.form-control option {
+        color: #000;
+      }
+
+      .booking-form .form-label {
+        position: absolute;
+        top: -10px;
+        left: 25px;
+        opacity: 0;
+        color: rgb(1, 24, 24);
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+        letter-spacing: 1.3px;
+        height: 15px;
+        line-height: 15px;
+        -webkit-transition: 0.2s all;
+        transition: 0.2s all;
+      }
+
+      .booking-form .form-group.input-not-empty .form-control {
+        padding-top: 16px;
+      }
+
+      .booking-form .form-group.input-not-empty .form-label {
+        opacity: 1;
+        top: 10px;
+      }
+
+      body {
+        background-image: url(./7T9364v.gif);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+      .txtst {
+        color: white;
+      }
+
+      .form1 {
+        padding: 15px 0;
+      }
+
+      .dropbtn {
+        background-color: aqua;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        min-width: 160px;
+      }
+
+      .dropbtn:hover,
+      .dropbtn:focus {
+        background-color: aqua;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown a:hover {
+        background-color: #ddd;
+      }
+
+      .show {
+        display: block;
+      }
+
+      .dropbtn1 {
+        background-color: aqua;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        min-width: 160px;
+      }
+
+      .dropbtn1:hover,
+      .dropbtn1:focus {
+        background-color: aqua;
+      }
+
+      .dropdown1 {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content1 {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content1 a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown1 a:hover {
+        background-color: #ddd;
+      }
+
+      .show1 {
+        display: block;
+      }
+
+      #selectDate {
+        width: 200px;
+        height: 50px;
+        background-color: #0ff;
+        color: black;
+        padding: 16px;
+        font-size: 16px;
+      }
+
+      /* #inputState {
+        width: 200px;
+        height: 50px;
+        background-color: #0ff;
+        color: black;
+        padding: 16px;
+        border: none;
+        font-size: 16px;
+      } */
+
+      #inputDistrict,
+      select {
+        width: 200px;
+        height: 50px;
+        background-color: #0ff;
+        color: black;
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .hide {
+        display: none;
+      }
+      .clasu {
+        background-color: rgb(2, 2, 2, 0.6);
+        width: 100%;
+        height: 100%;
+        /* position: absolute; */
+      }
+
+      .blank {
+        text-align: center;
+        padding: 60px;
+      }
+      .getbutton {
+        text-align: center;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        width: 300px;
+        height: 50px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+
+      .parplo {
+        display: flex;
+        justify-content: center;
+        padding: 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clasu">
+      <br />
+      <br />
+      <div class="location" style="text-align: center">
+        <h2 class="textgal">L O C A T I O N S</h2>
+        <br />
+        <br />
+
+        <form style="display: flex; justify-content: center">
+          <div class="form-group col-md-4 form1" style="margin-right: 40px">
+            <!-- <select class="form-control" id="inputState" class="seDate">
+              <option value="SelectState">Select State</option>
+              <option value="Andra Pradesh">Andra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madya Pradesh">Madya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Orissa">Orissa</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttaranchal">Uttaranchal</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="West Bengal">West Bengal</option>
+              <option disabled style="background-color: #aaa; color: #fff">
+                UNION Territories
+              </option>
+              <option value="Andaman and Nicobar Islands">
+                Andaman and Nicobar Islands
+              </option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Dadar and Nagar Haveli">
+                Dadar and Nagar Haveli
+              </option>
+              <option value="Daman and Diu">Daman and Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Lakshadeep">Lakshadeep</option>
+              <option value="Pondicherry">Pondicherry</option>
+            </select> -->
+            <select class="form-control" id="stateid" class="seDate">
+              <option value="" selected disabled>Choose State here</option>
+              <option value="an">Andaman &amp; Nicobar</option>
+              <option value="ap">Andhra Pradesh</option>
+              <option value="ar">Arunachal Pradesh</option>
+              <option value="as">Assam</option>
+              <option value="bh">Bihar</option>
+              <option value="cg">Chhattisgarh</option>
+              <option value="ch">Chandigarh</option>
+              <option value="dd">Daman &amp; Diu</option>
+              <option value="dh">Dadra &amp; Nagar Haveli</option>
+              <option value="dl">Delhi</option>
+              <option value="ga">Goa</option>
+              <option value="gj">Gujarat</option>
+              <option value="hp">Himachal Pradesh</option>
+              <option value="hr">Haryana</option>
+              <option value="jh">Jharkhand</option>
+              <option value="jk">Jammu &amp; Kashmir</option>
+              <option value="ka">Karnataka</option>
+              <option value="kl">Kerala</option>
+              <option value="ld">Lakshadweep</option>
+              <option value="mh">Maharashtra</option>
+              <option value="ml">Meghalaya</option>
+              <option value="mn">Manipur</option>
+              <option value="mp">Madhya Pradesh</option>
+              <option value="mz">Mizoram</option>
+              <option value="nl">Nagaland</option>
+              <option value="or">Odisha</option>
+              <option value="pb">Punjab</option>
+              <option value="py">Puducherry</option>
+              <option value="rj">Rajasthan</option>
+              <option value="sk">Sikkim</option>
+              <option value="tn">Tamilnadu</option>
+              <option value="tr">Tripura</option>
+              <option value="ts">Telangana</option>
+              <option value="uk">Uttarakhand</option>
+              <option value="up">Uttar Pradesh</option>
+              <option value="wb">West Bengal</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4 form1">
+            <select class="form-control" id="inputDistrict" class="seDate">
+              <option value="">Choose district</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <br />
+
+      <div class="Parameter" style="text-align: center">
+        <h2
+          class="textgal"
+          style="
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            padding: 25px, 0;
+          "
+        >
+          Parameters & plots
+        </h2>
+        <br />
+        <br />
+        <div class="parplo">
+          <!-- <select class="form-control " id="inputState" class="seDate" style="margin-right: 40px;">
+      <option value="SelectState">Select Parameters</option>
+      <option value="parameter1">Surface Pressure</option>
+      <option value="parameter2">Temprature</option>
+      <option value="parameter3">Specific humidity</option>
+      <option value="parameter4">Relative humidity</option>
+      <option value="parameter5">Wind Direction</option>
+      <option value="parameter6">Wind Speed</option>
+      <option value="parameter7">Surface Soil Wetness </option>
+      <option value="parameter8">Profile Soil Moisture </option>
+      <option value="parameter9">Root Zone soli wetness</option>
+      <option value="parameter10">Precipatation</option>
+      <option value="parameter11">Cloud Amount</option>
+    </select> -->
+          <select
+            class="form-control"
+            id="pollid"
+            class="seDate"
+            style="margin-right: 40px"
+          >
+            <option value="ws">Wind Speed</option>
+            <option value="wd">Wind Direction</option>
+            <option value="rain">Precipitation</option>
+            <option value="temp">Surface Temperature</option>
+            <option value="mixht">Mixing Height</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- <div class="plot" style="text-align: center;">
+    <h2 class="textgal" style="padding-bottom: 20px;">P L O T</h2>
+
+    <br>
+   
+  </div> -->
+
+      <br />
+      <br />
+
+      <!-- <div class="date" style="text-align: center">
+        <h2 class="textgal">D A T E</h2>
+        <br />
+        <br />
+        <div class="booking-form">
+          <form>
+            <div class="row">
+              <div class="col-md-6" style="margin-right: 40px">
+                <div class="form-group">
+                  <input class="form-control" type="date" required />
+                  <span class="form-label">Check In</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input class="form-control" type="date" required />
+                  <span class="form-label">Check out</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div> -->
+
+      <div class="blank">
+        <!-- <a href="plots.html" class="getbutton">Result</a>
+         -->
+         <button id="result" class="getbutton">Result</button>
+         <button id="clear" class="getbutton">Clear</button>
+      </div>
+    </div>
+    <div id ="page" class="hide">
+      <div class="graph">
+        <h2>Visualization of Weather Patterns in India by District</h2>
+        <p class="plot">
+          <iframe
+            id="select_timeseriespoll"
+            width="100%"
+            height="500"
+            scrolling="yes"
+            src=""
+          ></iframe>
+        </p>
+      </div>
+      <div class="currentSurfaceWind">
+        <div>
+          <h2 class="animationHeading">Realtime current surface wind</h2>
+        </div>
+        <p>
+          <iframe
+            loading="lazy"
+            style="width: 100%; height: 650px"
+            src="https://earth.nullschool.net/#current/wind/surface/level/patterson=80.26,20.75,1106"
+            width="100%"
+            height="650"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            scrolling="no"
+          ></iframe>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+      // function myFunction() {
+      //   document.getElementById("myDropdown").classList.toggle("show");
+      // }
+
+      // // Close the dropdown if the user clicks outside of it
+      // window.onclick = function (event) {
+      //   if (!event.target.matches(".dropbtn")) {
+      //     var dropdowns = document.getElementsByClassName("dropdown-content");
+      //     var i;
+      //     for (i = 0; i < dropdowns.length; i++) {
+      //       var openDropdown = dropdowns[i];
+      //       if (openDropdown.classList.contains("show")) {
+      //         openDropdown.classList.remove("show");
+      //       }
+      //     }
+      //   }
+      // };
+    </script>
+
+    <script>
+      // /* When the user clicks on the button,
+      // toggle between hiding and showing the dropdown content */
+      // function myFunction1() {
+      //   document.getElementById("myDropdown1").classList.toggle("show1");
+      // }
+
+      // // Close the dropdown if the user clicks outside of it
+      // window.onclick = function (event) {
+      //   if (!event.target.matches(".dropbtn1")) {
+      //     var dropdowns = document.getElementsByClassName("dropdown-content1");
+      //     var i;
+      //     for (i = 0; i < dropdowns.length; i++) {
+      //       var openDropdown = dropdowns[i];
+      //       if (openDropdown.classList.contains("show1")) {
+      //         openDropdown.classList.remove("show1");
+      //       }
+      //     }
+      //   }
+      // };
+    </script>
+
+    <!-- <script>
+  const date = new Date();
+
+const renderCalendar = () => {
+  date.setDate(1);
+
+  const monthDays = document.querySelector(".days");
+
+  const lastDay = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  ).getDate();
+
+  const prevLastDay = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    0
+  ).getDate();
+
+  const firstDayIndex = date.getDay();
+
+  const lastDayIndex = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  ).getDay();
+
+  const nextDays = 7 - lastDayIndex - 1;
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+
+  document.querySelector(".date p").innerHTML = new Date().toDateString();
+
+  let days = "";
+
+  for (let x = firstDayIndex; x > 0; x--) {
+    days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+  }
+
+  for (let i = 1; i <= lastDay; i++) {
+    if (
+      i === new Date().getDate() &&
+      date.getMonth() === new Date().getMonth()
+    ) {
+      days += `<div class="today">${i}</div>`;
+    } else {
+      days += `<div>${i}</div>`;
+    }
+  }
+
+  for (let j = 1; j <= nextDays; j++) {
+    days += `<div class="next-date">${j}</div>`;
+    monthDays.innerHTML = days;
+  }
+};
+
+document.querySelector(".prev").addEventListener("click", () => {
+  date.setMonth(date.getMonth() - 1);
+  renderCalendar();
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  date.setMonth(date.getMonth() + 1);
+  renderCalendar();
+});
+
+renderCalendar();
+</script> -->
+
+    <script>
+      // var AndraPradesh = [
+      //   "Anantapur",
+      //   "Chittoor",
+      //   "East Godavari",
+      //   "Guntur",
+      //   "Kadapa",
+      //   "Krishna",
+      //   "Kurnool",
+      //   "Prakasam",
+      //   "Nellore",
+      //   "Srikakulam",
+      //   "Visakhapatnam",
+      //   "Vizianagaram",
+      //   "West Godavari",
+      // ];
+      // var ArunachalPradesh = [
+      //   "Anjaw",
+      //   "Changlang",
+      //   "Dibang Valley",
+      //   "East Kameng",
+      //   "East Siang",
+      //   "Kra Daadi",
+      //   "Kurung Kumey",
+      //   "Lohit",
+      //   "Longding",
+      //   "Lower Dibang Valley",
+      //   "Lower Subansiri",
+      //   "Namsai",
+      //   "Papum Pare",
+      //   "Siang",
+      //   "Tawang",
+      //   "Tirap",
+      //   "Upper Siang",
+      //   "Upper Subansiri",
+      //   "West Kameng",
+      //   "West Siang",
+      //   "Itanagar",
+      // ];
+      // var Assam = [
+      //   "Baksa",
+      //   "Barpeta",
+      //   "Biswanath",
+      //   "Bongaigaon",
+      //   "Cachar",
+      //   "Charaideo",
+      //   "Chirang",
+      //   "Darrang",
+      //   "Dhemaji",
+      //   "Dhubri",
+      //   "Dibrugarh",
+      //   "Goalpara",
+      //   "Golaghat",
+      //   "Hailakandi",
+      //   "Hojai",
+      //   "Jorhat",
+      //   "Kamrup Metropolitan",
+      //   "Kamrup (Rural)",
+      //   "Karbi Anglong",
+      //   "Karimganj",
+      //   "Kokrajhar",
+      //   "Lakhimpur",
+      //   "Majuli",
+      //   "Morigaon",
+      //   "Nagaon",
+      //   "Nalbari",
+      //   "Dima Hasao",
+      //   "Sivasagar",
+      //   "Sonitpur",
+      //   "South Salmara Mankachar",
+      //   "Tinsukia",
+      //   "Udalguri",
+      //   "West Karbi Anglong",
+      // ];
+      // var Bihar = [
+      //   "Araria",
+      //   "Arwal",
+      //   "Aurangabad",
+      //   "Banka",
+      //   "Begusarai",
+      //   "Bhagalpur",
+      //   "Bhojpur",
+      //   "Buxar",
+      //   "Darbhanga",
+      //   "East Champaran",
+      //   "Gaya",
+      //   "Gopalganj",
+      //   "Jamui",
+      //   "Jehanabad",
+      //   "Kaimur",
+      //   "Katihar",
+      //   "Khagaria",
+      //   "Kishanganj",
+      //   "Lakhisarai",
+      //   "Madhepura",
+      //   "Madhubani",
+      //   "Munger",
+      //   "Muzaffarpur",
+      //   "Nalanda",
+      //   "Nawada",
+      //   "Patna",
+      //   "Purnia",
+      //   "Rohtas",
+      //   "Saharsa",
+      //   "Samastipur",
+      //   "Saran",
+      //   "Sheikhpura",
+      //   "Sheohar",
+      //   "Sitamarhi",
+      //   "Siwan",
+      //   "Supaul",
+      //   "Vaishali",
+      //   "West Champaran",
+      // ];
+      // var Chhattisgarh = [
+      //   "Balod",
+      //   "Baloda Bazar",
+      //   "Balrampur",
+      //   "Bastar",
+      //   "Bemetara",
+      //   "Bijapur",
+      //   "Bilaspur",
+      //   "Dantewada",
+      //   "Dhamtari",
+      //   "Durg",
+      //   "Gariaband",
+      //   "Janjgir Champa",
+      //   "Jashpur",
+      //   "Kabirdham",
+      //   "Kanker",
+      //   "Kondagaon",
+      //   "Korba",
+      //   "Koriya",
+      //   "Mahasamund",
+      //   "Mungeli",
+      //   "Narayanpur",
+      //   "Raigarh",
+      //   "Raipur",
+      //   "Rajnandgaon",
+      //   "Sukma",
+      //   "Surajpur",
+      //   "Surguja",
+      // ];
+      // var Goa = ["North Goa", "South Goa"];
+      // var Gujarat = [
+      //   "Ahmedabad",
+      //   "Amreli",
+      //   "Anand",
+      //   "Aravalli",
+      //   "Banaskantha",
+      //   "Bharuch",
+      //   "Bhavnagar",
+      //   "Botad",
+      //   "Chhota Udaipur",
+      //   "Dahod",
+      //   "Dang",
+      //   "Devbhoomi Dwarka",
+      //   "Gandhinagar",
+      //   "Gir Somnath",
+      //   "Jamnagar",
+      //   "Junagadh",
+      //   "Kheda",
+      //   "Kutch",
+      //   "Mahisagar",
+      //   "Mehsana",
+      //   "Morbi",
+      //   "Narmada",
+      //   "Navsari",
+      //   "Panchmahal",
+      //   "Patan",
+      //   "Porbandar",
+      //   "Rajkot",
+      //   "Sabarkantha",
+      //   "Surat",
+      //   "Surendranagar",
+      //   "Tapi",
+      //   "Vadodara",
+      //   "Valsad",
+      // ];
+      // var Haryana = [
+      //   "Ambala",
+      //   "Bhiwani",
+      //   "Charkhi Dadri",
+      //   "Faridabad",
+      //   "Fatehabad",
+      //   "Gurugram",
+      //   "Hisar",
+      //   "Jhajjar",
+      //   "Jind",
+      //   "Kaithal",
+      //   "Karnal",
+      //   "Kurukshetra",
+      //   "Mahendragarh",
+      //   "Mewat",
+      //   "Palwal",
+      //   "Panchkula",
+      //   "Panipat",
+      //   "Rewari",
+      //   "Rohtak",
+      //   "Sirsa",
+      //   "Sonipat",
+      //   "Yamunanagar",
+      // ];
+      // var HimachalPradesh = [
+      //   "Bilaspur",
+      //   "Chamba",
+      //   "Hamirpur",
+      //   "Kangra",
+      //   "Kinnaur",
+      //   "Kullu",
+      //   "Lahaul Spiti",
+      //   "Mandi",
+      //   "Shimla",
+      //   "Sirmaur",
+      //   "Solan",
+      //   "Una",
+      // ];
+      // var JammuKashmir = [
+      //   "Anantnag",
+      //   "Bandipora",
+      //   "Baramulla",
+      //   "Budgam",
+      //   "Doda",
+      //   "Ganderbal",
+      //   "Jammu",
+      //   "Kargil",
+      //   "Kathua",
+      //   "Kishtwar",
+      //   "Kulgam",
+      //   "Kupwara",
+      //   "Leh",
+      //   "Poonch",
+      //   "Pulwama",
+      //   "Rajouri",
+      //   "Ramban",
+      //   "Reasi",
+      //   "Samba",
+      //   "Shopian",
+      //   "Srinagar",
+      //   "Udhampur",
+      // ];
+      // var Jharkhand = [
+      //   "Bokaro",
+      //   "Chatra",
+      //   "Deoghar",
+      //   "Dhanbad",
+      //   "Dumka",
+      //   "East Singhbhum",
+      //   "Garhwa",
+      //   "Giridih",
+      //   "Godda",
+      //   "Gumla",
+      //   "Hazaribagh",
+      //   "Jamtara",
+      //   "Khunti",
+      //   "Koderma",
+      //   "Latehar",
+      //   "Lohardaga",
+      //   "Pakur",
+      //   "Palamu",
+      //   "Ramgarh",
+      //   "Ranchi",
+      //   "Sahebganj",
+      //   "Seraikela Kharsawan",
+      //   "Simdega",
+      //   "West Singhbhum",
+      // ];
+      // var Karnataka = [
+      //   "Bagalkot",
+      //   "Bangalore Rural",
+      //   "Bangalore Urban",
+      //   "Belgaum",
+      //   "Bellary",
+      //   "Bidar",
+      //   "Vijayapura",
+      //   "Chamarajanagar",
+      //   "Chikkaballapur",
+      //   "Chikkamagaluru",
+      //   "Chitradurga",
+      //   "Dakshina Kannada",
+      //   "Davanagere",
+      //   "Dharwad",
+      //   "Gadag",
+      //   "Gulbarga",
+      //   "Hassan",
+      //   "Haveri",
+      //   "Kodagu",
+      //   "Kolar",
+      //   "Koppal",
+      //   "Mandya",
+      //   "Mysore",
+      //   "Raichur",
+      //   "Ramanagara",
+      //   "Shimoga",
+      //   "Tumkur",
+      //   "Udupi",
+      //   "Uttara Kannada",
+      //   "Yadgir",
+      // ];
+      // var Kerala = [
+      //   "Alappuzha",
+      //   "Ernakulam",
+      //   "Idukki",
+      //   "Kannur",
+      //   "Kasaragod",
+      //   "Kollam",
+      //   "Kottayam",
+      //   "Kozhikode",
+      //   "Malappuram",
+      //   "Palakkad",
+      //   "Pathanamthitta",
+      //   "Thiruvananthapuram",
+      //   "Thrissur",
+      //   "Wayanad",
+      // ];
+      // var MadhyaPradesh = [
+      //   "Agar Malwa",
+      //   "Alirajpur",
+      //   "Anuppur",
+      //   "Ashoknagar",
+      //   "Balaghat",
+      //   "Barwani",
+      //   "Betul",
+      //   "Bhind",
+      //   "Bhopal",
+      //   "Burhanpur",
+      //   "Chhatarpur",
+      //   "Chhindwara",
+      //   "Damoh",
+      //   "Datia",
+      //   "Dewas",
+      //   "Dhar",
+      //   "Dindori",
+      //   "Guna",
+      //   "Gwalior",
+      //   "Harda",
+      //   "Hoshangabad",
+      //   "Indore",
+      //   "Jabalpur",
+      //   "Jhabua",
+      //   "Katni",
+      //   "Khandwa",
+      //   "Khargone",
+      //   "Mandla",
+      //   "Mandsaur",
+      //   "Morena",
+      //   "Narsinghpur",
+      //   "Neemuch",
+      //   "Panna",
+      //   "Raisen",
+      //   "Rajgarh",
+      //   "Ratlam",
+      //   "Rewa",
+      //   "Sagar",
+      //   "Satna",
+      //   "Sehore",
+      //   "Seoni",
+      //   "Shahdol",
+      //   "Shajapur",
+      //   "Sheopur",
+      //   "Shivpuri",
+      //   "Sidhi",
+      //   "Singrauli",
+      //   "Tikamgarh",
+      //   "Ujjain",
+      //   "Umaria",
+      //   "Vidisha",
+      // ];
+      // var Maharashtra = [
+      //   "Ahmednagar",
+      //   "Akola",
+      //   "Amravati",
+      //   "Aurangabad",
+      //   "Beed",
+      //   "Bhandara",
+      //   "Buldhana",
+      //   "Chandrapur",
+      //   "Dhule",
+      //   "Gadchiroli",
+      //   "Gondia",
+      //   "Hingoli",
+      //   "Jalgaon",
+      //   "Jalna",
+      //   "Kolhapur",
+      //   "Latur",
+      //   "Mumbai City",
+      //   "Mumbai Suburban",
+      //   "Nagpur",
+      //   "Nanded",
+      //   "Nandurbar",
+      //   "Nashik",
+      //   "Osmanabad",
+      //   "Palghar",
+      //   "Parbhani",
+      //   "Pune",
+      //   "Raigad",
+      //   "Ratnagiri",
+      //   "Sangli",
+      //   "Satara",
+      //   "Sindhudurg",
+      //   "Solapur",
+      //   "Thane",
+      //   "Wardha",
+      //   "Washim",
+      //   "Yavatmal",
+      // ];
+      // var Manipur = [
+      //   "Bishnupur",
+      //   "Chandel",
+      //   "Churachandpur",
+      //   "Imphal East",
+      //   "Imphal West",
+      //   "Jiribam",
+      //   "Kakching",
+      //   "Kamjong",
+      //   "Kangpokpi",
+      //   "Noney",
+      //   "Pherzawl",
+      //   "Senapati",
+      //   "Tamenglong",
+      //   "Tengnoupal",
+      //   "Thoubal",
+      //   "Ukhrul",
+      // ];
+      // var Meghalaya = [
+      //   "East Garo Hills",
+      //   "East Jaintia Hills",
+      //   "East Khasi Hills",
+      //   "North Garo Hills",
+      //   "Ri Bhoi",
+      //   "South Garo Hills",
+      //   "South West Garo Hills",
+      //   "South West Khasi Hills",
+      //   "West Garo Hills",
+      //   "West Jaintia Hills",
+      //   "West Khasi Hills",
+      // ];
+      // var Mizoram = [
+      //   "Aizawl",
+      //   "Champhai",
+      //   "Kolasib",
+      //   "Lawngtlai",
+      //   "Lunglei",
+      //   "Mamit",
+      //   "Saiha",
+      //   "Serchhip",
+      //   "Aizawl",
+      //   "Champhai",
+      //   "Kolasib",
+      //   "Lawngtlai",
+      //   "Lunglei",
+      //   "Mamit",
+      //   "Saiha",
+      //   "Serchhip",
+      // ];
+      // var Nagaland = [
+      //   "Dimapur",
+      //   "Kiphire",
+      //   "Kohima",
+      //   "Longleng",
+      //   "Mokokchung",
+      //   "Mon",
+      //   "Peren",
+      //   "Phek",
+      //   "Tuensang",
+      //   "Wokha",
+      //   "Zunheboto",
+      // ];
+      // var Odisha = [
+      //   "Angul",
+      //   "Balangir",
+      //   "Balasore",
+      //   "Bargarh",
+      //   "Bhadrak",
+      //   "Boudh",
+      //   "Cuttack",
+      //   "Debagarh",
+      //   "Dhenkanal",
+      //   "Gajapati",
+      //   "Ganjam",
+      //   "Jagatsinghpur",
+      //   "Jajpur",
+      //   "Jharsuguda",
+      //   "Kalahandi",
+      //   "Kandhamal",
+      //   "Kendrapara",
+      //   "Kendujhar",
+      //   "Khordha",
+      //   "Koraput",
+      //   "Malkangiri",
+      //   "Mayurbhanj",
+      //   "Nabarangpur",
+      //   "Nayagarh",
+      //   "Nuapada",
+      //   "Puri",
+      //   "Rayagada",
+      //   "Sambalpur",
+      //   "Subarnapur",
+      //   "Sundergarh",
+      // ];
+      // var Punjab = [
+      //   "Amritsar",
+      //   "Barnala",
+      //   "Bathinda",
+      //   "Faridkot",
+      //   "Fatehgarh Sahib",
+      //   "Fazilka",
+      //   "Firozpur",
+      //   "Gurdaspur",
+      //   "Hoshiarpur",
+      //   "Jalandhar",
+      //   "Kapurthala",
+      //   "Ludhiana",
+      //   "Mansa",
+      //   "Moga",
+      //   "Mohali",
+      //   "Muktsar",
+      //   "Pathankot",
+      //   "Patiala",
+      //   "Rupnagar",
+      //   "Sangrur",
+      //   "Shaheed Bhagat Singh Nagar",
+      //   "Tarn Taran",
+      // ];
+      // var Rajasthan = [
+      //   "Ajmer",
+      //   "Alwar",
+      //   "Banswara",
+      //   "Baran",
+      //   "Barmer",
+      //   "Bharatpur",
+      //   "Bhilwara",
+      //   "Bikaner",
+      //   "Bundi",
+      //   "Chittorgarh",
+      //   "Churu",
+      //   "Dausa",
+      //   "Dholpur",
+      //   "Dungarpur",
+      //   "Ganganagar",
+      //   "Hanumangarh",
+      //   "Jaipur",
+      //   "Jaisalmer",
+      //   "Jalore",
+      //   "Jhalawar",
+      //   "Jhunjhunu",
+      //   "Jodhpur",
+      //   "Karauli",
+      //   "Kota",
+      //   "Nagaur",
+      //   "Pali",
+      //   "Pratapgarh",
+      //   "Rajsamand",
+      //   "Sawai Madhopur",
+      //   "Sikar",
+      //   "Sirohi",
+      //   "Tonk",
+      //   "Udaipur",
+      // ];
+      // var Sikkim = [
+      //   "East Sikkim",
+      //   "North Sikkim",
+      //   "South Sikkim",
+      //   "West Sikkim",
+      // ];
+      // var TamilNadu = [
+      //   "Ariyalur",
+      //   "Chennai",
+      //   "Coimbatore",
+      //   "Cuddalore",
+      //   "Dharmapuri",
+      //   "Dindigul",
+      //   "Erode",
+      //   "Kanchipuram",
+      //   "Kanyakumari",
+      //   "Karur",
+      //   "Krishnagiri",
+      //   "Madurai",
+      //   "Nagapattinam",
+      //   "Namakkal",
+      //   "Nilgiris",
+      //   "Perambalur",
+      //   "Pudukkottai",
+      //   "Ramanathapuram",
+      //   "Salem",
+      //   "Sivaganga",
+      //   "Thanjavur",
+      //   "Theni",
+      //   "Thoothukudi",
+      //   "Tiruchirappalli",
+      //   "Tirunelveli",
+      //   "Tiruppur",
+      //   "Tiruvallur",
+      //   "Tiruvannamalai",
+      //   "Tiruvarur",
+      //   "Vellore",
+      //   "Viluppuram",
+      //   "Virudhunagar",
+      // ];
+      // var Telangana = [
+      //   "Adilabad",
+      //   "Bhadradri Kothagudem",
+      //   "Hyderabad",
+      //   "Jagtial",
+      //   "Jangaon",
+      //   "Jayashankar",
+      //   "Jogulamba",
+      //   "Kamareddy",
+      //   "Karimnagar",
+      //   "Khammam",
+      //   "Komaram Bheem",
+      //   "Mahabubabad",
+      //   "Mahbubnagar",
+      //   "Mancherial",
+      //   "Medak",
+      //   "Medchal",
+      //   "Nagarkurnool",
+      //   "Nalgonda",
+      //   "Nirmal",
+      //   "Nizamabad",
+      //   "Peddapalli",
+      //   "Rajanna Sircilla",
+      //   "Ranga Reddy",
+      //   "Sangareddy",
+      //   "Siddipet",
+      //   "Suryapet",
+      //   "Vikarabad",
+      //   "Wanaparthy",
+      //   "Warangal Rural",
+      //   "Warangal Urban",
+      //   "Yadadri Bhuvanagiri",
+      // ];
+      // var Tripura = [
+      //   "Dhalai",
+      //   "Gomati",
+      //   "Khowai",
+      //   "North Tripura",
+      //   "Sepahijala",
+      //   "South Tripura",
+      //   "Unakoti",
+      //   "West Tripura",
+      // ];
+      // var UttarPradesh = [
+      //   "Agra",
+      //   "Aligarh",
+      //   "Allahabad",
+      //   "Ambedkar Nagar",
+      //   "Amethi",
+      //   "Amroha",
+      //   "Auraiya",
+      //   "Azamgarh",
+      //   "Baghpat",
+      //   "Bahraich",
+      //   "Ballia",
+      //   "Balrampur",
+      //   "Banda",
+      //   "Barabanki",
+      //   "Bareilly",
+      //   "Basti",
+      //   "Bhadohi",
+      //   "Bijnor",
+      //   "Budaun",
+      //   "Bulandshahr",
+      //   "Chandauli",
+      //   "Chitrakoot",
+      //   "Deoria",
+      //   "Etah",
+      //   "Etawah",
+      //   "Faizabad",
+      //   "Farrukhabad",
+      //   "Fatehpur",
+      //   "Firozabad",
+      //   "Gautam Buddha Nagar",
+      //   "Ghaziabad",
+      //   "Ghazipur",
+      //   "Gonda",
+      //   "Gorakhpur",
+      //   "Hamirpur",
+      //   "Hapur",
+      //   "Hardoi",
+      //   "Hathras",
+      //   "Jalaun",
+      //   "Jaunpur",
+      //   "Jhansi",
+      //   "Kannauj",
+      //   "Kanpur Dehat",
+      //   "Kanpur Nagar",
+      //   "Kasganj",
+      //   "Kaushambi",
+      //   "Kheri",
+      //   "Kushinagar",
+      //   "Lalitpur",
+      //   "Lucknow",
+      //   "Maharajganj",
+      //   "Mahoba",
+      //   "Mainpuri",
+      //   "Mathura",
+      //   "Mau",
+      //   "Meerut",
+      //   "Mirzapur",
+      //   "Moradabad",
+      //   "Muzaffarnagar",
+      //   "Pilibhit",
+      //   "Pratapgarh",
+      //   "Raebareli",
+      //   "Rampur",
+      //   "Saharanpur",
+      //   "Sambhal",
+      //   "Sant Kabir Nagar",
+      //   "Shahjahanpur",
+      //   "Shamli",
+      //   "Shravasti",
+      //   "Siddharthnagar",
+      //   "Sitapur",
+      //   "Sonbhadra",
+      //   "Sultanpur",
+      //   "Unnao",
+      //   "Varanasi",
+      // ];
+      // var Uttarakhand = [
+      //   "Almora",
+      //   "Bageshwar",
+      //   "Chamoli",
+      //   "Champawat",
+      //   "Dehradun",
+      //   "Haridwar",
+      //   "Nainital",
+      //   "Pauri",
+      //   "Pithoragarh",
+      //   "Rudraprayag",
+      //   "Tehri",
+      //   "Udham Singh Nagar",
+      //   "Uttarkashi",
+      // ];
+      // var WestBengal = [
+      //   "Alipurduar",
+      //   "Bankura",
+      //   "Birbhum",
+      //   "Cooch Behar",
+      //   "Dakshin Dinajpur",
+      //   "Darjeeling",
+      //   "Hooghly",
+      //   "Howrah",
+      //   "Jalpaiguri",
+      //   "Jhargram",
+      //   "Kalimpong",
+      //   "Kolkata",
+      //   "Malda",
+      //   "Murshidabad",
+      //   "Nadia",
+      //   "North 24 Parganas",
+      //   "Paschim Bardhaman",
+      //   "Paschim Medinipur",
+      //   "Purba Bardhaman",
+      //   "Purba Medinipur",
+      //   "Purulia",
+      //   "South 24 Parganas",
+      //   "Uttar Dinajpur",
+      // ];
+      // var AndamanNicobar = ["Nicobar", "North Middle Andaman", "South Andaman"];
+      // var Chandigarh = ["Chandigarh"];
+      // var DadraHaveli = ["Dadra Nagar Haveli"];
+      // var DamanDiu = ["Daman", "Diu"];
+      // var Delhi = [
+      //   "Central Delhi",
+      //   "East Delhi",
+      //   "New Delhi",
+      //   "North Delhi",
+      //   "North East Delhi",
+      //   "North West Delhi",
+      //   "Shahdara",
+      //   "South Delhi",
+      //   "South East Delhi",
+      //   "South West Delhi",
+      //   "West Delhi",
+      // ];
+      // var Lakshadweep = ["Lakshadweep"];
+      // var Puducherry = ["Karaikal", "Mahe", "Puducherry", "Yanam"];
+
+      // $("#stateid").change(function () {
+      //   var StateSelected = $(this).val();
+      //   console.log(StateSelected);
+
+      //   var optionsList;
+      //   var htmlString = "";
+
+      //   switch (StateSelected) {
+      //     case "ap":
+      //       optionsList = AndraPradesh;
+      //       break;
+      //     case "ar":
+      //       optionsList = ArunachalPradesh;
+      //       break;
+      //     case "as":
+      //       optionsList = Assam;
+      //       break;
+      //     case "bh":
+      //       optionsList = Bihar;
+      //       break;
+      //     case "cg":
+      //       optionsList = Chhattisgarh;
+      //       break;
+      //     case "ga":
+      //       optionsList = Goa;
+      //       break;
+      //     case "gj":
+      //       optionsList = Gujarat;
+      //       break;
+      //     case "hr":
+      //       optionsList = Haryana;
+      //       break;
+      //     case "hp":
+      //       optionsList = HimachalPradesh;
+      //       break;
+      //     case "jk":
+      //       optionsList = JammuKashmir;
+      //       break;
+      //     case "jh":
+      //       optionsList = Jharkhand;
+      //       break;
+      //     case "ka":
+      //       optionsList = Karnataka;
+      //       break;
+      //     case "kl":
+      //       optionsList = Kerala;
+      //       break;
+      //     case "mp":
+      //       optionsList = MadhyaPradesh;
+      //       break;
+      //     case "mh":
+      //       optionsList = Maharashtra;
+      //       break;
+      //     case "mn":
+      //       optionsList = Manipur;
+      //       break;
+      //     case "ml":
+      //       optionsList = Meghalaya;
+      //       break;
+      //     case "mz":
+      //       optionsList = Mizoram;
+      //       break;
+      //     case "nl":
+      //       optionsList = Nagaland;
+      //       break;
+      //     case "or":
+      //       optionsList = Orissa;
+      //       break;
+      //     case "pb":
+      //       optionsList = Punjab;
+      //       break;
+      //     case "rj":
+      //       optionsList = Rajasthan;
+      //       break;
+      //     case "sk":
+      //       optionsList = Sikkim;
+      //       break;
+      //     case "tn":
+      //       optionsList = TamilNadu;
+      //       break;
+      //     case "ts":
+      //       optionsList = Telangana;
+      //       break;
+      //     case "tr":
+      //       optionsList = Tripura;
+      //       break;
+      //     case "uk":
+      //       optionsList = Uttarakhand;
+      //       break;
+      //     case "up":
+      //       optionsList = UttarPradesh;
+      //       break;
+      //     case "wb":
+      //       optionsList = WestBengal;
+      //       break;
+      //     case "an":
+      //       optionsList = AndamanNicobar;
+      //       break;
+      //     case "ch":
+      //       optionsList = Chandigarh;
+      //       break;
+      //     case "dh":
+      //       optionsList = DadraHaveli;
+      //       break;
+      //     case "dd":
+      //       optionsList = DamanDiu;
+      //       break;
+      //     case "dl":
+      //       optionsList = Delhi;
+      //       break;
+      //     case "ld":
+      //       optionsList = Lakshadweep;
+      //       break;
+      //     case "py":
+      //       optionsList = Pondicherry;
+      //       break;
+      //   }
+      //   for (var i = 0; i < optionsList.length; i++) {
+      //     htmlString =
+      //       htmlString +
+      //       "<option value='" +
+      //       optionsList[i] +
+      //       "'>" +
+      //       optionsList[i] +
+      //       "</option>";
+      //   }
+      //   $("#inputDistrict").html(htmlString);
+      // });
+
+      // $("#inputDistrict").change(function () {
+      //   var dis = $(this).val();
+      //   console.log(dis);
+      // });
+
+      // $("#pollid").change(function(){
+      //   var poll = $(this).val();
+      //   console.log(poll);
+      // })
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="2nd.js"></script>
+  </body>
+</html>
